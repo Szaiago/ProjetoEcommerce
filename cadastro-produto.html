@@ -1,47 +1,96 @@
-<html>
+<!DOCTYPE html>
+<html lang="pt-br">
     <head>
+    <!--Cabeçalho-->
         <title>PROJETO ECOMMERCE</title>
+    <!---->
+    <!-- Metas-->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+        <meta http-equiv="Pragma" content="no-cache">
+        <meta http-equiv="Expires" content="0">
+        <meta http-equiv="Content-Language" content="pt-BR">
+        <meta name="description" content="Sistema de Ecommerce Desenvolvido pelo aluno Iago Souza">
+        <meta name="keywords" content="ecommerce, produtos, vendas, online">
+        <meta name="author" content="Iago Souza">
+        <meta name="referrer" content="no-referrer-when-downgrade">
+    <!---->
+    <!-- Externos -->
+        <link rel="stylesheet" href="css/index.css"/>
+        <link id="base-stylesheet" rel="stylesheet" href="css/base.css"/>
+        <link id="nightmode-stylesheet" rel="stylesheet" href="css/modonoturno.css" disabled/>
+        <link rel="stylesheet" href="css/responsividade.css"/>
+        <script src="js/menu-configuracao.js" defer></script>
+        <script src="js/modonoturno.js" defer></script>
+        <script src="js/modal-acessibilidade.js" defer></script>
+        <script src="js/dropdown-ajuda.js" defer></script>
+        <script src="js/dropdown-responsivo.js" defer></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!---->
     </head>
     <body>
-        <div class="adicionar-produto">
-            <input type="text" class="nome-produto" id="nome-produto" placeholder="Nome">
-            <select class="categoria-produto" id="categoria-produto" placeholder="Categoria">
-                <option>PERIFÉRICO</option>
-                <option>COSMÉTICO</option>
-                <option>VESTUÁRIO</option>
-            </select>
-            <input type="text" class="marca-produto" id="marca-produto" placeholder="Marca">
-            <input type="text" class="peso-produto" id="peso-produto" placeholder="Peso">
-            <input type="text" class="material-produto" id="materail-produto" placeholder="Material">
-            <select class="cor-produto" id="cor-produto" placeholder="Cor">
-                <option>PRETO</option>
-                <option>BRANCO</option>
-                <option>PRATA</option>
-                <option>AZUL</option>
-                <option>VERMELHO</option>
-                <option>VERDE</option>
-                <option>ROSA</option>
-                <option>ROXO</option>
-                <option>AMARELO</option>
-                <option>LARANJA</option>
-                <option>CINZA</option>
-                <option>CIANO</option>
-            </select>
-            <input type="text" class="preço-de-venda-produto" id="preço-de-venda-produto" placeholder="Preço">
-            <select class="unidade-de-medida-produto" id="unidade-de-medida-produto" placeholder="Unidade de Medida">
-                <option>UNIDADE</option>
-                <option>CAIXA</option>
-                <option>LITRO</option>
-                <option>QUILO</option>
-            </select>
-            <select class="garantia-produto" id="garantia-produto" placeholder="Garantia">
-                <option>3 MESES</option>
-                <option>6 MESES</option>
-                <option>1 ANO</option>
-                <option>1,5 ANO</option>
-                <option>2 ANOS</option>
-                <option>3 ANOS</option>
-            </select>
+        <div class="menu-vertical">
+            <div class="logo">
+                <a href="https://sc.senai.br/"><div class="logo-senai"></div></a>
+                <div class="logo-empresa"></div>
+            </div>
+            <div class="perfil">
+                <div class="titulo-vertical">
+                    <p>PERFIL</p>
+                </div>
+                <a href="perfil.html"><div class="logo-perfil"></div></a>
+            </div>
+            <div class="sobrenos">
+                <div class="titulo-sobrenos">
+                    <p>QUEM SOMOS?</p>
+                </div>
+                <a href="quemsomos.html"><div class="logo-sobrenos"></div></a>
+            </div>
+            <div class="configuracao">
+                <div class="titulo-configuracao">
+                    <p>CONFIGURAÇÃO</p>
+                </div>
+                <div class="logo-configuracao"></div>
+            </div>
+            <div class="menu-configuracao" style="display: none;">
+                <div class="aviso-menu-configuracao">
+                    <div class="seta-baixo"></div>
+                </div>
+                <div class="texto-configuracao">
+                    <p>MODO NOTURNO:</p>
+                </div>
+                <div class="container-ativar-e-desativar-modo-noturno">
+                    <label class="switch">
+                        <input type="checkbox" id="toggleModoNoturno">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="container-principal">
+            <div class="menu-horizontal">
+                <div class="menu-responsividade">
+                    <button class="hamburguer-btn" onclick="toggleDropdown()">☰</button>
+                    <div id="dropdown" class="dropdown-content">
+                        <a href="perfil.html">PERFIL</a>
+                        <a href="quemsomos.html">QUEM SOMOS?</a>
+                        <a href="configuracao.html">CONFIGURAÇÕES</a>
+                    </div>
+                </div>
+                <div class="preenchimento-menu"></div>
+                <div class="logo-menuhorizontal">
+                    <div class="logo-detalhe"></div>
+                </div>
+                <div class="ajuda-menuhorizontal">
+                    <div class="ajuda-logo"></div>
+                    <div class="contenteudo-ajuda">
+                        <p>ADICIONAR INFOS AQUI:</p>
+                    </div>
+                </div>
+            </div>
+            <div class="base-info">
+            </div>
         </div>
     </body>
 </html>
