@@ -1,0 +1,279 @@
+/* RESPONSIVIDADE */
+@media only screen and (max-width: 600px) {
+    .menu-vertical {
+        display: none;
+    }
+    .menu-horizontal {
+        margin: 0;
+        padding: 0;
+        width: 121vw;
+        height: 10vh;
+    }
+    .menu-responsividade {
+        display: flex;
+    }
+    .preenchimento-menu {
+        display: none;
+    }
+    .menu-responsividade, .logo-menuhorizontal, .ajuda-menuhorizontal {
+        margin-left: 18vw;
+        padding: 0;
+        width: 40.3333333333vw;
+        height: 10vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .hamburguer-btn {
+        font-size: 30px;
+        cursor: pointer;
+        border: none;
+        background-color: var(--colorprimaria);
+        color: white;
+    }
+
+    .hamburguer-btn:focus {
+        outline: none;
+    }
+
+    .dropdown-content {
+        z-index: 1;
+        top: 10vh;
+        left: 20vw;
+        min-width: 150px;
+        display: none;
+        position: absolute;
+        background-color: var(--colorsecundaria);
+    }
+
+    .dropdown-content a {
+        padding: 12px 16px;
+        font-size: 18px;
+        display: flex;
+        cursor: pointer;
+        text-decoration: none;
+        font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        color: var(--colorText);
+    }
+
+    .dropdown-content a:hover {
+        background-color: darkred;
+    }
+
+    .show {
+        display: block;
+    }
+    .logo-detalhe {
+        width: 10vw;
+        height: 10vh;
+    }
+    .ajuda-logo {
+        position: fixed;
+        width: 10%;
+        height: 8vh;
+    }
+    .contenteudo-ajuda {
+        position: fixed;
+        width: 40vw;
+        height: 20vh;
+        top: 12vh;
+        margin-right: 100px;
+    }
+    .base-info {
+        padding: 0;
+        margin-left: 5vw;
+        width: 100vw;
+        height: 90vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+    }
+    .container-acessibilidade {
+        width: 17vw;
+        margin-right: 10px;
+        height: 10vh;
+        left: 75vw;
+        top: 45vh;
+    }
+    .container-modal-acessibilidade {
+        z-index: 1000;
+        top: 15vh;
+        left: 23vw;
+        width: 50vw;
+        height: 40vh;
+    }
+    .audio-acessibilidade {
+        width: 40vw;
+        height: 5vh;
+        border-radius: 0px;
+    }
+    .p-conteudo-site {
+        font-size: 30px;
+    }
+    .modulo-conteudo-base-info {
+        width: 90vw;
+        flex-direction: column;
+    }
+    .img-conteudo-site-1 {
+        width: 90vw;
+        height: auto;
+        min-height: 45vh;
+        border-radius: 15px 15px 0 0;
+    }
+    .texto-conteudo-site {
+        width: 90vw;
+        height: 100%;
+        min-height: 45vh;
+    }
+    .texto-paragrafo {
+        width: 85vw;
+        height: 90%;
+        margin-top: 20px;
+        border-top: 2px solid var(--colorprimaria);
+        border-left: 0px;
+    }
+}
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+    .menu-vertical {
+        display: none;
+    }
+    .menu-horizontal {
+        margin: 0;
+        padding: 0;
+        width: 121vw;
+        height: 10vh;
+    }
+    .menu-responsividade {
+        display: flex;
+    }
+    .preenchimento-menu {
+        display: none;
+    }
+    .menu-responsividade, .logo-menuhorizontal, .ajuda-menuhorizontal {
+        margin-left: 18vw;
+        padding: 0;
+        width: 40.3333333333vw;
+        height: 10vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .hamburguer-btn {
+        font-size: 45px;
+        cursor: pointer;
+        border: none;
+        background-color: var(--colorprimaria);
+        color: white;
+    }
+
+    .hamburguer-btn:focus {
+        outline: none;
+    }
+
+    .dropdown-content {
+        z-index: 1;
+        top: 10vh;
+        left: 20vw;
+        min-width: 150px;
+        display: none;
+        position: absolute;
+        background-color: var(--colorsecundaria);
+    }
+
+    .dropdown-content a {
+        padding: 12px 16px;
+        font-size: 25px;
+        display: flex;
+        cursor: pointer;
+        text-decoration: none;
+        font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        color: var(--colorText);
+    }
+
+    .dropdown-content a:hover {
+        background-color: darkred;
+    }
+
+    .show {
+        display: block;
+    }
+    .logo-detalhe {
+        width: 10vw;
+        height: 10vh;
+    }
+    .ajuda-logo {
+        position: fixed;
+        width: 10%;
+        height: 8vh;
+    }
+    .contenteudo-ajuda {
+        position: fixed;
+        width: 40vw;
+        height: 20vh;
+        top: 12vh;
+        margin-right: 100px;
+    }
+    .base-info {
+        padding: 0;
+        margin-left: 5vw;
+        width: 100vw;
+        height: 90vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+    }
+    .container-acessibilidade {
+        width: 11vw;
+        margin-right: 10px;
+        height: 8vh;
+        left: 85vw;
+        top: 45vh;
+    }
+    .container-modal-acessibilidade {
+        z-index: 1000;
+        top: 15vh;
+        left: 35vw;
+        width: 50vw;
+        height: 40vh;
+    }
+    .audio-acessibilidade {
+        width: 40vw;
+        height: 5vh;
+        border-radius: 0px;
+    }
+    .modulo-conteudo-base-info {
+        width: 90vw;
+        flex-direction: column;
+    }
+    .img-conteudo-site-1 {
+        width: 90vw;
+        height: auto;
+        min-height: 45vh;
+        border-radius: 15px 15px 0 0;
+    }
+    .texto-conteudo-site {
+        width: 90vw;
+        height: 100%;
+        min-height: 45vh;
+    }
+    .texto-paragrafo {
+        width: 85vw;
+        height: 90%;
+        margin-top: 20px;
+        border-top: 2px solid var(--colorprimaria);
+        border-left: 0px;
+    }
+}
+@media only screen and (min-width: 1025px) and (max-width: 1440px) {
+    .texto-paragrafo {
+        border-left: 0px;
+    }
+    .texto-paragrafo p {
+        font-size: 15px;
+    }
+}
+@media only screen and (min-width: 1441px) {
+}
+/* FIM RESPONSIVIDADE */ 

@@ -17,17 +17,34 @@
         <meta name="referrer" content="no-referrer-when-downgrade">
     <!---->
     <!-- Externos -->
-        <link rel="stylesheet" href="css/index.css"/>
+        <link rel="stylesheet" href="css/cadastrar-produto.css"/>
         <link id="base-stylesheet" rel="stylesheet" href="css/base.css"/>
         <link id="nightmode-stylesheet" rel="stylesheet" href="css/modonoturno.css" disabled/>
         <link rel="stylesheet" href="css/responsividade.css"/>
         <script src="js/menu-configuracao.js" defer></script>
         <script src="js/modonoturno.js" defer></script>
-        <script src="js/modal-acessibilidade.js" defer></script>
         <script src="js/dropdown-ajuda.js" defer></script>
         <script src="js/dropdown-responsivo.js" defer></script>
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <!---->
+    <script>
+        $(document).ready(function(){
+            // Verificar a URL para a mensagem de status
+            const urlParams = new URLSearchParams(window.location.search);
+            const status = urlParams.get('status');
+
+            if (status === 'sucesso') {
+                $("#mensagem").html("<p style='color: green;'>Produto cadastrado com sucesso!</p>").fadeIn();
+            } else if (status === 'erro') {
+                $("#mensagem").html("<p style='color: red;'>Erro ao cadastrar o produto. Tente novamente.</p>").fadeIn();
+            }
+
+            // Esconder a mensagem após 4 segundos
+            setTimeout(function() {
+                $("#mensagem").fadeOut();
+            }, 4000);
+        });
+    </script>
     </head>
     <body>
         <div class="menu-vertical">
@@ -90,6 +107,114 @@
                 </div>
             </div>
             <div class="base-info">
+            <div class="modulo-base-info" style="justify-content: left; align-items: flex-start;">
+                <p class="p-conteudo-site">CADASTRO DE PRODUTOS</p>
+            </div>
+            <div id="mensagem" style="display: none; margin-bottom: 20px;"></div>
+            <form class="form-cadastrar-produtos" action="php/cadastrar_produto.php" method="POST">
+                <div class="adicionar-produto">
+                    <div class="sub-titulo-cadastro">
+                        <p>Nome do Produto:</p>
+                    </div>
+                    <input type="text" name="nome_produto" id="nome-produto" placeholder="Nome">
+                    <div class="agrupar-etapas">
+                        <div class="orientar-input">
+                            <div class="sub-titulo-cadastro" style="width: 20vw;">
+                                <p>Categoria:</p>
+                            </div>
+                            <select name="categoria_produto" id="categoria-produto">
+                                <option>Escolher Categoira</option>
+                                <option>PERIFÉRICO</option>
+                                <option>COSMÉTICO</option>
+                                <option>VESTUÁRIO</option>
+                            </select>
+                        </div>
+                        <div class="orientar-input">
+                            <div class="sub-titulo-cadastro" style="width: 24.5vw; margin-left: 10px;">
+                                <p>Marca:</p>
+                            </div>
+                            <input type="text" name="marca_produto" id="marca-produto" placeholder="Marca">
+                        </div>
+                    </div>
+                    <div class="agrupar-etapas">
+                        <div class="orientar-input">
+                            <div class="sub-titulo-cadastro" style="width: 20vw;">
+                                <p>Peso:</p>
+                            </div>
+                            <input type="text" name="peso_produto" id="peso-produto" placeholder="Peso">
+                        </div>
+                        <div class="orientar-input">
+                            <div class="sub-titulo-cadastro" style="width: 22vw; margin-left: 20px;">
+                                <p>Material:</p>
+                            </div>
+                            <input type="text" name="material_produto" id="material-produto" placeholder="Material" style="margin-left: 20px;">
+                        </div>
+                    </div>
+                    <div class="agrupar-etapas">
+                        <div class="orientar-input">
+                            <div class="sub-titulo-cadastro" style="width: 20vw;">
+                                <p>Cor do Produto:</p>
+                            </div>
+                            <select name="cor_produto" id="cor-produto">
+                                <option>Escolher Cor</option>
+                                <option>PRETO</option>
+                                <option>BRANCO</option>
+                                <option>PRATA</option>
+                                <option>AZUL</option>
+                                <option>VERMELHO</option>
+                                <option>VERDE</option>
+                                <option>ROSA</option>
+                                <option>ROXO</option>
+                                <option>AMARELO</option>
+                                <option>LARANJA</option>
+                                <option>CINZA</option>
+                                <option>CIANO</option>
+                            </select>
+                        </div>
+                        <div class="orientar-input">
+                            <div class="sub-titulo-cadastro" style="width: 24.5vw; margin-left: 10px;">
+                                <p>Preço de Venda:</p>
+                            </div>
+                            <input type="text" name="preco_venda" id="preço-de-venda-produto" placeholder="Preço">
+                        </div>
+                    </div>
+                    <div class="agrupar-etapas">
+                        <div class="orientar-input">
+                            <div class="sub-titulo-cadastro" style="width: 20.5vw;">
+                                <p>Unidade de Medida:</p>
+                            </div>
+                            <select name="unidade_medida" id="unidade-de-medida-produto">
+                                <option>Escolher Unidade de Medida</option>
+                                <option>UNIDADE</option>
+                                <option>CAIXA</option>
+                                <option>LITRO</option>
+                                <option>QUILO</option>
+                            </select>
+                        </div>
+                        <div class="orientar-input">
+                            <div class="sub-titulo-cadastro" style="width: 22.8vw; margin-left: 15px;">
+                                <p>Tempo de Garantia:</p>
+                            </div>
+                            <select name="garantia_produto" id="garantia-produto">
+                                <option>Escolher Garantia</option>
+                                <option>3 MESES</option>
+                                <option>6 MESES</option>
+                                <option>1 ANO</option>
+                                <option>1,5 ANO</option>
+                                <option>2 ANOS</option>
+                                <option>3 ANOS</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="sub-titulo-cadastro">
+                        <p>Descrição do Produto:</p>
+                    </div>
+                    <input type="text" name="descricao_produto" id="descrição-produto" placeholder="Descrição">
+                    <div class="agrupar-etapas">
+                    <input type="submit" class="cadastrar-produtos" id="cadastrar-produtos" value="CADASTRAR">
+                    </div>
+                </div>
+            </form>
             </div>
         </div>
     </body>

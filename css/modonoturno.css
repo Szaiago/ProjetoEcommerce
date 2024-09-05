@@ -1,0 +1,477 @@
+/* PRINCIPAL */
+:root {
+    --colorprimaria: #000000;
+    --colorsecundaria: #0e0e0e;
+    --colorterciaria: #9b9b9b;
+    --colorFundo: #252525;
+    --colorFundoText: #161616;
+    --colorText: #b1b1b1;
+}
+body {
+    margin: 0;
+    padding: 0;
+    min-width: 100vw;
+    height: 100vh;
+    min-height: 100vh;
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    justify-content: first baseline;
+    align-items: center;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    overflow: hidden;
+    background-color: var(--colorFundo);
+}
+/* FIM PRINCIPAL */ 
+/* MENU VERTICAL */ 
+.menu-vertical {
+    margin: 0;
+    padding: 0;
+    width: 13vw;
+    height: 100vh;
+    left: -8vw;
+    z-index: 2;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: first baseline;
+    align-items: flex-end;
+    border-right: 3px solid var(--colorprimaria);
+    background-color: var(--colorsecundaria);
+    transition: 1s;
+}
+.menu-vertical:hover {
+    transition: 1s;
+    left: -0.5vw;
+}
+.logo {
+    margin: 0;
+    padding: 0;
+    width: 13vw;
+    height: 10vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+}
+.logo-empresa {
+    margin: 0;
+    padding: 0;
+    width: 5vw;
+    height: 10vh;
+    background-image: url("img/imgempresa/logo.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.logo-senai {
+    margin: 0;
+    margin-right: 1vw;
+    padding: 0;
+    width: 4.9vw;
+    height: 2.9vh;
+    background-image: url("img/imgempresa/logo-senai.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.perfil {
+    margin: 0;
+    padding: 0;
+    width: 13vw;
+    height: 10vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+}
+.logo-perfil {
+    margin: 0;
+    padding: 0;
+    width: 5vw;
+    height: 10vh;
+    cursor: pointer;
+    background-image: url("img/imgempresa/perfil.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: 1s;
+}
+.logo-perfil:hover {
+    transform: scale(1.1);
+    transition: 1s;
+    background-image: url("img/imgempresa/perfil-hover.png");
+}
+.titulo-vertical {
+    width: 8vw;
+    height: 10vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.titulo-vertical p {
+    font-size: 13px;
+    margin-left: 10px;
+    cursor: default;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: var(--colorText);
+}
+.sobrenos {
+    margin: 0;
+    padding: 0;
+    width: 13vw;
+    height: 10vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+}
+.logo-sobrenos {
+    margin: 0;
+    padding: 0;
+    width: 5vw;
+    height: 10vh;
+    cursor: pointer;
+    background-image: url("img/imgempresa/sobrenos.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: 1s;
+}
+.logo-sobrenos:hover {
+    transform: scale(1.1);
+    transition: 1s;
+    background-image: url("img/imgempresa/sobrenos-hover.png");
+}
+.titulo-sobrenos {
+    width: 8vw;
+    height: 10vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.titulo-sobrenos p {
+    font-size: 13px;
+    margin-left: 10px;
+    cursor: default;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: var(--colorText);
+}
+.configuracao {
+    margin: 0;
+    padding: 0;
+    width: 13vw;
+    height: 10vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+}
+.logo-configuracao {
+    margin: 0;
+    padding: 0;
+    width: 5vw;
+    height: 10vh;
+    cursor: pointer;
+    background-image: url("img/imgempresa/configuracao.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: 1s;
+}
+.logo-configuracao:hover {
+    transform: scale(1.1);
+    transition: 1s;
+    background-image: url("img/imgempresa/configuracao-hover.png");
+}
+.titulo-configuracao {
+    width: 8vw;
+    height: 10vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.titulo-configuracao p {
+    font-size: 13px;
+    margin-left: 10px;
+    cursor: default;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: var(--colorText);
+}
+.menu-configuracao {
+    margin: 0;
+    padding: 0;
+    width: 13vw;
+    height: 10vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+.aviso-menu-configuracao {
+    margin: 0;
+    padding: 0;
+    width: 13vw;
+    height: 3vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+}
+.seta-baixo {
+    margin-right: 1vw;
+    padding: 0;
+    width: 3vw;
+    height: 3vh;
+    background-image: url("img/imgempresa/seta-para-baixo.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.texto-configuracao {
+    margin: 0;
+    padding: 0;
+    width: 13vw;
+    height: 7vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.texto-configuracao p {
+    font-size: 13px; 
+    cursor: default;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: var(--colorText);
+}
+.container-ativar-e-desativar-modo-noturno {
+    margin: 0;
+    padding: 0;
+    width: 13vw;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.switch {
+    position: relative;
+    display: inline-block;
+     width: 60px;
+    height: 20px;
+}
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgb(255, 91, 91);
+    transition: 0.4s;
+    border-radius: 34px;
+}
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 20px;
+    width: 20px;
+    left: 4px;
+    bottom: 0;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+}
+input:checked + .slider {
+    background-color: rgb(101, 255, 101);
+}
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+/* FIM MENU VERTICAL */ 
+.container-principal {
+    margin: 0;
+    padding: 0;
+    width: 95vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: first baseline;
+    align-items: center;
+}
+/* MENU HORIZONTAL */ 
+.menu-horizontal {
+    margin: 0;
+    padding: 0;
+    width: 95vw;
+    height: 10vh;
+    left: -8vw;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--colorsecundaria);
+    background-color: var(--colorprimaria);
+}
+.menu-responsividade {
+    display: none;
+}
+.preenchimento-menu, .logo-menuhorizontal, .ajuda-menuhorizontal {
+    margin: 0;
+    padding: 0;
+    width: 31.6666666667vw;
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.logo-detalhe {
+    width: 7vw;
+    height: 7vh;
+    background-image: url("img/imgempresa/logo-menuhorizontal-modonoturno.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.ajuda-menuhorizontal {
+    justify-content: flex-end;
+}
+.ajuda-logo {
+    width: 4vw;
+    height: 5vh;
+    cursor: pointer;
+    position: fixed;
+    background-image: url("img/imgempresa/ajuda-menu-horizontal-modo-noturno.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.contenteudo-ajuda {
+    width: 15vw;
+    height: 20vh;
+    top: 12vh;
+    margin-right: 40px;
+    border-radius: 4px;
+    position: relative;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--colorsecundaria)
+}
+.contenteudo-ajuda p{
+    font-size: 14px;
+    cursor: default;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: var(--colorText);
+}
+/* FIM MENU HORZIONTAL */ 
+/* INFORMAÇÕES DO SITE */ 
+.base-info {
+    margin-left: -16vw;
+    padding: 0;
+    width: 95vw;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    overflow-y: auto; /* Adiciona scroll na vertical */
+}
+.base-info::-webkit-scrollbar {
+    width: 8px;     
+}
+.base-info::-webkit-scrollbar-track {
+    background: var(--colorText);    
+}
+.base-info::-webkit-scrollbar-thumb {
+    background-color: var(--colorterciaria);       
+}
+.container-acessibilidade {
+    width: 4vw;
+    height: 8vh;
+    left: 95vw;
+    top: 45vh;
+    position: absolute;
+    cursor: pointer;
+    border-radius: 5px;
+    box-shadow: 0 0 8px black;
+    background-image: url("img/imgempresa/acessibilidade-modonoturno.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: 1s;
+}
+.container-acessibilidade:hover {
+    transform: scale(1.1);
+    transition: 1s;
+}
+.container-modal-acessibilidade {
+    z-index: 1000;
+    top: 15vh;
+    left: 76.5vw;
+    width: 18vw;
+    height: 40vh;
+    position: fixed;
+    display: none;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: var(--colorsecundaria);
+    border-radius: 4px;
+}
+.personagem-narracao {
+    width: 90%;
+    height: 70%;
+    border-radius: 4px;
+    margin-top: 5px;
+    background-image: url("img/imgempresa/personagem-acessibilidade.gif");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.audio-pagina {
+    width: 90%;
+    height: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.audio-acessibilidade {
+    width: 16.3vw;
+    height: 5vh;
+    border-radius: 0px;
+}
+.p-container-modal-acessibilidade {
+    font-size: 10px;
+    cursor: default;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: var(--colorText);
+}
+.p-conteudo-site {
+    font-size: 40px;
+    cursor: default;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: var(--colorText);
+}
+.titulo-paragrafo p {
+    color: var(--colorText);
+}
+.texto-paragrafo {
+    border-top: 2px solid var(--colorText);
+}
+.texto-paragrafo p {
+    color: var(--colorText);
+}
+/* FIM INFORMAÇÕES DO SITE */ 

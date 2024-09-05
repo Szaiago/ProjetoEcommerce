@@ -31,11 +31,11 @@ VALUES ('$nome_produto', '$categoria_produto', '$marca_produto', '$peso_produto'
 
 if ($conn->query($sql) === TRUE) {
     // Redirecionar para a página HTML com uma mensagem de sucesso
-    header("Location: cadastro-produto.html?status=sucesso");
+    header("Location: ../cadastro-produto.html?status=sucesso");
     exit();
 } else {
     // Redirecionar para a página HTML com uma mensagem de erro
-    header("Location: cadastro-produto.html?status=erro");
+    header("Location: ../cadastro-produto.html?status=erro");
     exit();
 }
 
