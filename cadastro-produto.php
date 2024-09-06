@@ -2,7 +2,7 @@
 <html lang="pt-br">
     <head>
     <!--Cabeçalho-->
-        <title>PROJETO ECOMMERCE</title>
+        <title>CadastroProduto/Goshop</title>
     <!---->
     <!-- Metas-->
         <meta charset="UTF-8">
@@ -21,6 +21,7 @@
         <link id="base-stylesheet" rel="stylesheet" href="css/base.css"/>
         <link id="nightmode-stylesheet" rel="stylesheet" href="css/modonoturno.css" disabled/>
         <link rel="stylesheet" href="css/responsividade.css"/>
+        <script src="js/menu-produtos.js" defer></script>
         <script src="js/menu-configuracao.js" defer></script>
         <script src="js/modonoturno.js" defer></script>
         <script src="js/dropdown-ajuda.js" defer></script>
@@ -63,6 +64,23 @@
                     <p>QUEM SOMOS?</p>
                 </div>
                 <a href="quemsomos.html"><div class="logo-sobrenos"></div></a>
+            </div>
+            <div class="produtos">
+                <div class="titulo-produtos">
+                    <p>PRODUTOS</p>
+                </div>
+                <div class="logo-produtos"></div>
+            </div>
+            <div class="menu-produtos" style="display: none;">
+                <div class="aviso-menu-produtos">
+                    <div class="seta-baixo"></div>
+                </div>
+                <div class="texto-produtos">
+                    <a class="menu-subtitulo-produtos" href="cadastro-produto.php" style="color: white;">CADASTRAR</a>
+                </div>
+                <div class="texto-produtos">
+                    <a class="menu-subtitulo-produtos" href="produtos-cadastrados.php">CADASTRADOS</a>
+                </div>
             </div>
             <div class="configuracao">
                 <div class="titulo-configuracao">
@@ -108,21 +126,21 @@
             </div>
             <div class="base-info">
             <div class="modulo-base-info" style="justify-content: left; align-items: flex-start;">
-                <p class="p-conteudo-site">CADASTRO DE PRODUTOS</p>
+                <p class="p-conteudo-site" style="border-bottom:1px solid black;">CADASTRO DE PRODUTOS</p>
             </div>
             <div id="mensagem" style="display: none; margin-bottom: 20px;"></div>
-            <form class="form-cadastrar-produtos" action="php/cadastrar_produto.php" method="POST">
+            <form class="form-cadastrar-produtos" action="php/cadastrar_produto.php" method="POST" enctype="multipart/form-data">
                 <div class="adicionar-produto">
                     <div class="sub-titulo-cadastro">
                         <p>Nome do Produto:</p>
                     </div>
-                    <input type="text" name="nome_produto" id="nome-produto" placeholder="Nome">
+                    <input type="text" name="nome_produto" id="nome-produto" placeholder="Nome" required>
                     <div class="agrupar-etapas">
                         <div class="orientar-input">
                             <div class="sub-titulo-cadastro" style="width: 20vw;">
                                 <p>Categoria:</p>
                             </div>
-                            <select name="categoria_produto" id="categoria-produto">
+                            <select name="categoria_produto" id="categoria-produto" required>
                                 <option>Escolher Categoira</option>
                                 <option>PERIFÉRICO</option>
                                 <option>COSMÉTICO</option>
@@ -133,7 +151,7 @@
                             <div class="sub-titulo-cadastro" style="width: 24.5vw; margin-left: 10px;">
                                 <p>Marca:</p>
                             </div>
-                            <input type="text" name="marca_produto" id="marca-produto" placeholder="Marca">
+                            <input type="text" name="marca_produto" id="marca-produto" placeholder="Marca" required>
                         </div>
                     </div>
                     <div class="agrupar-etapas">
@@ -141,13 +159,13 @@
                             <div class="sub-titulo-cadastro" style="width: 20vw;">
                                 <p>Peso:</p>
                             </div>
-                            <input type="text" name="peso_produto" id="peso-produto" placeholder="Peso">
+                            <input type="text" name="peso_produto" id="peso-produto" placeholder="Peso" required>
                         </div>
                         <div class="orientar-input">
                             <div class="sub-titulo-cadastro" style="width: 22vw; margin-left: 20px;">
                                 <p>Material:</p>
                             </div>
-                            <input type="text" name="material_produto" id="material-produto" placeholder="Material" style="margin-left: 20px;">
+                            <input type="text" name="material_produto" id="material-produto" placeholder="Material" style="margin-left: 20px;" required>
                         </div>
                     </div>
                     <div class="agrupar-etapas">
@@ -155,7 +173,7 @@
                             <div class="sub-titulo-cadastro" style="width: 20vw;">
                                 <p>Cor do Produto:</p>
                             </div>
-                            <select name="cor_produto" id="cor-produto">
+                            <select name="cor_produto" id="cor-produto" required>
                                 <option>Escolher Cor</option>
                                 <option>PRETO</option>
                                 <option>BRANCO</option>
@@ -175,7 +193,7 @@
                             <div class="sub-titulo-cadastro" style="width: 24.5vw; margin-left: 10px;">
                                 <p>Preço de Venda:</p>
                             </div>
-                            <input type="text" name="preco_venda" id="preço-de-venda-produto" placeholder="Preço">
+                            <input type="text" name="preco_venda" id="preço-de-venda-produto" placeholder="Preço" required> 
                         </div>
                     </div>
                     <div class="agrupar-etapas">
@@ -183,7 +201,7 @@
                             <div class="sub-titulo-cadastro" style="width: 20.5vw;">
                                 <p>Unidade de Medida:</p>
                             </div>
-                            <select name="unidade_medida" id="unidade-de-medida-produto">
+                            <select name="unidade_medida" id="unidade-de-medida-produto" required>
                                 <option>Escolher Unidade de Medida</option>
                                 <option>UNIDADE</option>
                                 <option>CAIXA</option>
@@ -195,7 +213,7 @@
                             <div class="sub-titulo-cadastro" style="width: 22.8vw; margin-left: 15px;">
                                 <p>Tempo de Garantia:</p>
                             </div>
-                            <select name="garantia_produto" id="garantia-produto">
+                            <select name="garantia_produto" id="garantia-produto" required>
                                 <option>Escolher Garantia</option>
                                 <option>3 MESES</option>
                                 <option>6 MESES</option>
@@ -207,14 +225,39 @@
                         </div>
                     </div>
                     <div class="sub-titulo-cadastro">
+                        <p>Imagem do Produto:</p>
+                    </div>
+                    <div class="custom-file-upload">
+                        <label for="img-produto" id="custom-file-label">Selecione uma imagem</label>
+                        <input type="file" name="img_produto" id="img-produto" accept="image/*" required>
+                    </div>           
+                    <div class="sub-titulo-cadastro">
                         <p>Descrição do Produto:</p>
                     </div>
-                    <input type="text" name="descricao_produto" id="descrição-produto" placeholder="Descrição">
+                    <input type="text" name="descricao_produto" id="descrição-produto" placeholder="Descrição" required>
                     <div class="agrupar-etapas">
                     <input type="submit" class="cadastrar-produtos" id="cadastrar-produtos" value="CADASTRAR">
                     </div>
                 </div>
             </form>
+            <div class="modulo-base-info" style="width:85vw; justify-content: left; align-items: flex-start;">
+                <p class="p-conteudo-site" style="border-bottom:1px solid black;">ÚLTIMOS PRODUTOS CASTRADOS</p>
+            </div>
+            <div class="tabela-produtos-cadastrados">
+                <div class="coluna-titulos">
+                    <div class="titulos-produtos-cadastrados" style="width: 11.75vw;"><p>NOME</p></div>
+                    <div class="titulos-produtos-cadastrados" style="width: 11.75vw;"><p>CATEGORIA</p></div>
+                    <div class="titulos-produtos-cadastrados" style="width: 11.75vw;"><p>MARCA</p></div>
+                    <div class="titulos-produtos-cadastrados" style="width: 11.75vw;"><p>PESO</p></div>
+                    <div class="titulos-produtos-cadastrados" style="width: 11.75vw;"><p>MATERIAL</p></div>
+                    <div class="titulos-produtos-cadastrados" style="width: 11.75vw;"><p>COR</p></div>
+                    <div class="titulos-produtos-cadastrados" style="width: 11.75vw;"><p>VALOR</p></div>
+                    <div class="titulos-produtos-cadastrados" style="border-right: none; width: 11vw;"><p>MEDIDA</p></div>
+                </div>
+                <div class="coluna-informacoes">
+                    <?php include 'php/exibir_produtos.php'; ?>
+                </div>
+            </div>  
             </div>
         </div>
     </body>
