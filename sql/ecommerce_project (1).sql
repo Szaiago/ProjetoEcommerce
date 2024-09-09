@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 09-Set-2024 às 01:55
+-- Tempo de geração: 09-Set-2024 às 04:35
 -- Versão do servidor: 10.4.32-MariaDB
 -- versão do PHP: 8.2.12
 
@@ -39,8 +39,20 @@ CREATE TABLE `produtos` (
   `unidade_medida` enum('UNIDADE','CAIXA','LITRO','QUILO') DEFAULT NULL,
   `garantia_produto` enum('3 MESES','6 MESES','1 ANO','1,5 ANO','2 ANOS','3 ANOS') DEFAULT NULL,
   `descricao_produto` text DEFAULT NULL,
-  `img_produto` varchar(255) DEFAULT NULL
+  `img_produto` varchar(255) DEFAULT NULL,
+  `quantidade_produto` int(11) DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Extraindo dados da tabela `produtos`
+--
+
+INSERT INTO `produtos` (`id`, `nome_produto`, `categoria_produto`, `marca_produto`, `peso_produto`, `material_produto`, `cor_produto`, `preco_venda`, `unidade_medida`, `garantia_produto`, `descricao_produto`, `img_produto`, `quantidade_produto`) VALUES
+(55, 'CONTROLE XBOX', 'PERIFÉRICO', 'Xbox', '300', 'Plástico', 'PRETO', 499.00, 'UNIDADE', '2 ANOS', 'Controle do Xbox One', 'black white nature logo (1).png', 20),
+(56, 'Camiseta HIGH', 'VESTUÁRIO', 'HIGH', '100', 'Poliester', 'VERMELHO', 249.00, 'UNIDADE', '2 ANOS', 'Camiseta da High', 'black white nature logo.png', 35),
+(57, 'Perfume Malbec', 'COSMÉTICO', 'Boticário', '200', 'Vidro', 'VERMELHO', 189.00, 'UNIDADE', '3 MESES', 'Perfume Malbec', 'black white nature logo (1).png', 60),
+(58, 'Boné New Era', 'VESTUÁRIO', 'New Era', '100', 'Tecido', 'CINZA', 199.00, 'UNIDADE', '3 MESES', 'Boné New Era Cinza', 'black white nature logo (1).png', 23),
+(59, 'Mouses Redragon', 'PERIFÉRICO', 'Redragon', '200', 'Plástico', 'BRANCO', 999.00, 'UNIDADE', '3 ANOS', 'Mouse Redragon', 'black white nature logo.png', 10);
 
 --
 -- Índices para tabelas despejadas
@@ -60,7 +72,7 @@ ALTER TABLE `produtos`
 -- AUTO_INCREMENT de tabela `produtos`
 --
 ALTER TABLE `produtos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
