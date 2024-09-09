@@ -82,6 +82,18 @@
                     <a class="menu-subtitulo-produtos" href="produtos-cadastrados.php">CADASTRADOS</a>
                 </div>
             </div>
+            <div class="estoque">
+                <div class="titulo-estoque">
+                    <p>ESTOQUE</p>
+                </div>
+                <a href="estoque.php"><div class="logo-estoque"></div></a>
+            </div>
+            <div class="publicados">
+                <div class="titulo-publicados">
+                    <p>PUBLICADOS</p>
+                </div>
+                <a href="publicados.html"><div class="logo-publicados"></div></a>
+            </div>
             <div class="configuracao">
                 <div class="titulo-configuracao">
                     <p>CONFIGURAÇÃO</p>

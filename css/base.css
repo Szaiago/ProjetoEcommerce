@@ -251,6 +251,92 @@ body {
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     color: var(--colorText);
 }
+.estoque {
+    margin: 0;
+    padding: 0;
+    width: 13vw;
+    height: 10vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+}
+.logo-estoque {
+    margin: 0;
+    padding: 0;
+    width: 5vw;
+    height: 10vh;
+    cursor: pointer;
+    background-image: url("img/imgempresa/estoque.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: 1s;
+}
+.logo-estoque:hover {
+    transform: scale(1.1);
+    transition: 1s;
+    -webkit-filter: drop-shadow(0 0 10px #FFEB3B);
+    filter: drop-shadow(0 0 10px #FFEB3B);
+}
+.titulo-estoque {
+    width: 8vw;
+    height: 10vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.titulo-estoque p {
+    font-size: 16px;
+    margin-left: 10px;
+    cursor: default;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: var(--colorText);
+}
+.publicados {
+    margin: 0;
+    padding: 0;
+    width: 13vw;
+    height: 10vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+}
+.logo-publicados {
+    margin: 0;
+    padding: 0;
+    width: 5vw;
+    height: 10vh;
+    cursor: pointer;
+    background-image: url("img/imgempresa/publicados.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: 1s;
+}
+.logo-publicados:hover {
+    transform: scale(1.1);
+    transition: 1s;
+    -webkit-filter: drop-shadow(0 0 10px #FFEB3B);
+    filter: drop-shadow(0 0 10px #FFEB3B);
+}
+.titulo-publicados {
+    width: 8vw;
+    height: 10vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.titulo-publicados p {
+    font-size: 16px;
+    margin-left: 10px;
+    cursor: default;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: var(--colorText);
+}
 .configuracao {
     margin: 0;
     padding: 0;

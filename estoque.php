@@ -2,7 +2,7 @@
 <html lang="pt-br">
     <head>
     <!--Cabeçalho-->
-        <title>ProdutosCadastrados/Goshop</title>
+        <title>Estoque/Goshop</title>
     <!---->
     <!-- Metas-->
         <meta charset="UTF-8">
@@ -17,7 +17,7 @@
         <meta name="referrer" content="no-referrer-when-downgrade">
     <!---->
     <!-- Externos -->
-        <link rel="stylesheet" href="css/cadastrar-produto.css"/>
+        <link rel="stylesheet" href="css/estoque.css"/>
         <link id="base-stylesheet" rel="stylesheet" href="css/base.css"/>
         <link id="nightmode-stylesheet" rel="stylesheet" href="css/modonoturno.css" disabled/>
         <link rel="stylesheet" href="css/responsividade.css"/>
@@ -29,6 +29,33 @@
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <!---->
     </head>
+    <script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Selecionar o modal e o botão de fechar
+    var modal = document.getElementById('customModal');
+    var span = document.querySelector('.close');
+
+    // Configurar o evento de clique no botão "ATUALIZAR" para mostrar o modal
+    document.querySelectorAll('.atualizar-produto-button').forEach(function(button) {
+        button.addEventListener('click', function() {
+            modal.style.display = 'flex';
+        });
+    });
+
+    // Configurar o evento de clique no botão de fechar para esconder o modal
+    span.onclick = function() {
+        modal.style.display = 'none';
+    };
+
+    // Configurar o evento de clique fora do modal para escondê-lo
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = 'none';
+        }
+    };
+});
+</script>
+
     <body>
         <div class="menu-vertical">
             <div class="logo">
@@ -68,7 +95,7 @@
                 <div class="titulo-estoque">
                     <p>ESTOQUE</p>
                 </div>
-                <a href="estoque.php"><div class="logo-estoque"></div></a>
+                <a href="estoque.html"><div class="logo-estoque"></div></a>
             </div>
             <div class="publicados">
                 <div class="titulo-publicados">
@@ -120,63 +147,111 @@
             </div>
             <div class="base-info">
             <div class="modulo-base-info" style="width:85vw; justify-content: left; align-items: flex-start;">
-                <p class="p-conteudo-site" style="border-bottom:1px solid black;">PRODUTOS CADASTRADOS</p>
-            </div>
-            <form id="clearTableForm" action="php/clear-table.php" method="post">
-                    <input type="submit" value="APAGAR TUDO" class="apagar-produtos-button"/>
-            </form>
-            <div id="confirmModal" class="modal">
-                <div class="modal-content">
-                    <span class="close">&times;</span>
-                    <p>Tem certeza de que deseja apagar todos os produtos?</p>
-                    <div class="modal-buttons">
-                        <button id="confirmDelete" class="apagar-produtos-button">Confirmar</button>
-                        <button id="cancelDelete" class="apagar-produtos-button">Cancelar</button>
+                <p class="p-conteudo-site" style="border-bottom:1px solid black;">ESTOQUE:</p>
+                <div class="tabela-dados-estoque">
+                    <div class="coluna-titulos">
+                    <div class="titulos-produtos-cadastrados"><p>QUANTIDADE</p></div>
+                    <div class="titulos-produtos-cadastrados"><p>PESO</p></div>
+                    <div class="titulos-produtos-cadastrados" style="border-right: none;"><p>VALOR</p></div>
                     </div>
+                    <div class="coluna-informacoes">
+                    <?php include 'php/info-estoque.php'; ?>
+                </div>
                 </div>
             </div>
-            </div>
-            <div class="tabela-produtos-cadastrados" style="position: relative; left: -8vw; top:-35vh;">
+            <div id="message" style="display:none; position:relative; top:-1vh; padding:10px; border-radius:5px; color:white;"></div>
+            <div class="tabela-produtos-cadastrados" style="position: relative; left: -0.1vw; top:0vh;">
                 <div class="coluna-titulos">
                     <div class="titulos-produtos-cadastrados"><p>NOME</p></div>
-                    <div class="titulos-produtos-cadastrados"><p>CATEGORIA</p></div>
+                    <div class="titulos-produtos-cadastrados"><p>QUANTIDADE</p></div>
                     <div class="titulos-produtos-cadastrados"><p>MARCA</p></div>
                     <div class="titulos-produtos-cadastrados"><p>PESO</p></div>
                     <div class="titulos-produtos-cadastrados"><p>MATERIAL</p></div>
                     <div class="titulos-produtos-cadastrados"><p>COR</p></div>
                     <div class="titulos-produtos-cadastrados"><p>VALOR</p></div>
-                    <div class="titulos-produtos-cadastrados"><p>MEDIDA</p></div>
-                    <div class="titulos-produtos-cadastrados" style="border-right: none; width:5vw;"><p>DELETAR</p></div>
+                    <div class="titulos-produtos-cadastrados"><p>UNIDADE DE MEDIDA</p></div>
+                    <div class="titulos-produtos-cadastrados" style="border-right: none; width:5vw;"><p>ATUALIZAR</p></div>
                 </div>
                 <div class="coluna-informacoes">
-                    <?php include 'php/mostrar-todos-produtos-cadastrados.php'; ?>
+                    <?php include 'php/estocado.php'; ?>
                 </div>
-            </div>  
+            </div>
+        </div>
+        <div id="customModal" class="modal" style="display:none;">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <p>ATUALIZAR A QUANTIDADE:</p>
+                <input type="text" class="atualizar-quantidade-produto" id="atualizar-quantidade-produto" placeholder="Quantidade para atualizar" required>
+                <div class="alinhar-buttons-apagar-ou-adicionar">
+                    <input type="submit" class="adicionar-button" id="adicionar-button" value="ADICIONAR">
+                    <input type="submit" class="reduzir-button" id="reduzir-button" value="REDUZIR">
+                </div>
             </div>
         </div>
     </body>
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            document.querySelector('.apagar-produtos-button').addEventListener('click', function(event) {
-                event.preventDefault();
-                if (confirm('Tem certeza de que deseja apagar todos os produtos?')) {
-                    fetch('php/clear-table.php', {
-                        method: 'POST'
-                    })
-                    .then(response => response.text())
-                    .then(data => {
-                        if (data === 'success') {
-                            alert('Tabela limpa com sucesso!');
-                            location.reload(); // Recarrega a página para atualizar a lista de produtos
-                        } else {
-                            alert('Ocorreu um erro ao tentar limpar a tabela.');
-                        }
-                    })
-                    .catch(error => {
-                        alert('Ocorreu um erro: ' + error.message);
-                    });
-                }
-            });
+    document.addEventListener('DOMContentLoaded', function() {
+    var modal = document.getElementById('customModal');
+    var span = document.querySelector('.close');
+    var addButton = document.getElementById('adicionar-button');
+    var reduceButton = document.getElementById('reduzir-button');
+    var quantityInput = document.getElementById('atualizar-quantidade-produto');
+
+    document.querySelectorAll('.atualizar-produto-button').forEach(function(button) {
+        button.addEventListener('click', function() {
+            modal.style.display = 'flex';
+            modal.setAttribute('data-id', button.getAttribute('data-id'));
         });
-    </script>
+    });
+
+    span.onclick = function() {
+        modal.style.display = 'none';
+        quantityInput.value = ''; // Limpar o campo de entrada ao fechar o modal
+    };
+
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = 'none';
+            quantityInput.value = ''; // Limpar o campo de entrada ao fechar o modal
+        }
+    };
+
+    addButton.addEventListener('click', function() {
+        var productId = modal.getAttribute('data-id');
+        var quantity = quantityInput.value;
+
+        $.post('php/adicionar-ou-reduzir-quantidade.php', {
+            update_id: productId,
+            quantity: quantity,
+            action: 'add'
+        }, function(response) {
+            alert('Quantidade alterada com sucesso!');
+            modal.style.display = 'none';
+            quantityInput.value = ''; // Limpar o campo de entrada após o envio
+            location.reload(); // Recarregar a página
+        }).fail(function() {
+            alert('Não foi possível alterar a quantidade.');
+        });
+    });
+
+    reduceButton.addEventListener('click', function() {
+        var productId = modal.getAttribute('data-id');
+        var quantity = quantityInput.value;
+
+        $.post('php/adicionar-ou-reduzir-quantidade.php', {
+            update_id: productId,
+            quantity: quantity,
+            action: 'reduce'
+        }, function(response) {
+            alert('Quantidade alterada com sucesso!');
+            modal.style.display = 'none';
+            quantityInput.value = ''; // Limpar o campo de entrada após o envio
+            location.reload(); // Recarregar a página
+        }).fail(function() {
+            alert('Não foi possível alterar a quantidade.');
+        });
+    });
+});
+
+</script>
 </html>
