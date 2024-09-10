@@ -2,7 +2,7 @@
 <html lang="pt-br">
     <head>
     <!--Cabeçalho-->
-        <title>ProdutosCadastrados/Goshop</title>
+        <title>Publicados/Goshop</title>
     <!---->
     <!-- Metas-->
         <meta charset="UTF-8">
@@ -17,7 +17,7 @@
         <meta name="referrer" content="no-referrer-when-downgrade">
     <!---->
     <!-- Externos -->
-        <link rel="stylesheet" href="css/cadastrar-produto.css"/>
+        <link rel="stylesheet" href="css/estoque.css"/>
         <link id="base-stylesheet" rel="stylesheet" href="css/base.css"/>
         <link id="nightmode-stylesheet" rel="stylesheet" href="css/modonoturno.css" disabled/>
         <link rel="stylesheet" href="css/responsividade.css"/>
@@ -61,7 +61,7 @@
                     <a class="menu-subtitulo-produtos" href="cadastro-produto.php">CADASTRAR</a>
                 </div>
                 <div class="texto-produtos">
-                    <a class="menu-subtitulo-produtos" href="produtos-cadastrados.php" style="color: white;">CADASTRADOS</a>
+                    <a class="menu-subtitulo-produtos" href="produtos-cadastrados.php">CADASTRADOS</a>
                 </div>
             </div>
             <div class="estoque">
@@ -72,7 +72,7 @@
             </div>
             <div class="publicados">
                 <div class="titulo-publicados">
-                    <p>PUBLICADOS</p>
+                    <p style="color: white;">PUBLICADOS</p>
                 </div>
                 <a href="publicados.php"><div class="logo-publicados"></div></a>
             </div>
@@ -120,63 +120,8 @@
             </div>
             <div class="base-info">
             <div class="modulo-base-info" style="width:85vw; justify-content: left; align-items: flex-start;">
-                <p class="p-conteudo-site" style="border-bottom:1px solid black;">PRODUTOS CADASTRADOS</p>
-            </div>
-            <form id="clearTableForm" action="php/clear-table.php" method="post">
-                    <input type="submit" value="APAGAR TUDO" class="apagar-produtos-button"/>
-            </form>
-            <div id="confirmModal" class="modal">
-                <div class="modal-content">
-                    <span class="close">&times;</span>
-                    <p>Tem certeza de que deseja apagar todos os produtos?</p>
-                    <div class="modal-buttons">
-                        <button id="confirmDelete" class="apagar-produtos-button">Confirmar</button>
-                        <button id="cancelDelete" class="apagar-produtos-button">Cancelar</button>
-                    </div>
-                </div>
-            </div>
-            </div>
-            <div class="tabela-produtos-cadastrados" style="position: relative; left: -8vw; top:-35vh;">
-                <div class="coluna-titulos">
-                    <div class="titulos-produtos-cadastrados"><p>NOME</p></div>
-                    <div class="titulos-produtos-cadastrados"><p>CATEGORIA</p></div>
-                    <div class="titulos-produtos-cadastrados"><p>MARCA</p></div>
-                    <div class="titulos-produtos-cadastrados"><p>PESO</p></div>
-                    <div class="titulos-produtos-cadastrados"><p>MATERIAL</p></div>
-                    <div class="titulos-produtos-cadastrados"><p>COR</p></div>
-                    <div class="titulos-produtos-cadastrados"><p>VALOR</p></div>
-                    <div class="titulos-produtos-cadastrados"><p>MEDIDA</p></div>
-                    <div class="titulos-produtos-cadastrados" style="border-right: none; width:5vw;"><p>DELETAR</p></div>
-                </div>
-                <div class="coluna-informacoes">
-                    <?php include 'php/mostrar-todos-produtos-cadastrados.php'; ?>
-                </div>
-            </div>  
+                <p class="p-conteudo-site" style="border-bottom:1px solid black;">PUBLICADOS:</p>
             </div>
         </div>
     </body>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            document.querySelector('.apagar-produtos-button').addEventListener('click', function(event) {
-                event.preventDefault();
-                if (confirm('Tem certeza de que deseja apagar todos os produtos?')) {
-                    fetch('php/clear-table.php', {
-                        method: 'POST'
-                    })
-                    .then(response => response.text())
-                    .then(data => {
-                        if (data === 'success') {
-                            alert('Tabela limpa com sucesso!');
-                            location.reload();
-                        } else {
-                            alert('Ocorreu um erro ao tentar limpar a tabela.');
-                        }
-                    })
-                    .catch(error => {
-                        alert('Ocorreu um erro: ' + error.message);
-                    });
-                }
-            });
-        });
-    </script>
 </html>

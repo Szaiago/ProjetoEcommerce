@@ -31,23 +31,19 @@
     </head>
     <script>
 document.addEventListener('DOMContentLoaded', function() {
-    // Selecionar o modal e o botão de fechar
     var modal = document.getElementById('customModal');
     var span = document.querySelector('.close');
 
-    // Configurar o evento de clique no botão "ATUALIZAR" para mostrar o modal
     document.querySelectorAll('.atualizar-produto-button').forEach(function(button) {
         button.addEventListener('click', function() {
             modal.style.display = 'flex';
         });
     });
 
-    // Configurar o evento de clique no botão de fechar para esconder o modal
     span.onclick = function() {
         modal.style.display = 'none';
     };
 
-    // Configurar o evento de clique fora do modal para escondê-lo
     window.onclick = function(event) {
         if (event.target == modal) {
             modal.style.display = 'none';
@@ -88,20 +84,20 @@ document.addEventListener('DOMContentLoaded', function() {
                     <a class="menu-subtitulo-produtos" href="cadastro-produto.php">CADASTRAR</a>
                 </div>
                 <div class="texto-produtos">
-                    <a class="menu-subtitulo-produtos" href="produtos-cadastrados.php" style="color: white;">CADASTRADOS</a>
+                    <a class="menu-subtitulo-produtos" href="produtos-cadastrados.php">CADASTRADOS</a>
                 </div>
             </div>
             <div class="estoque">
                 <div class="titulo-estoque">
-                    <p>ESTOQUE</p>
+                    <p style="color: white;">ESTOQUE</p>
                 </div>
-                <a href="estoque.html"><div class="logo-estoque"></div></a>
+                <a href="estoque.php"><div class="logo-estoque"></div></a>
             </div>
             <div class="publicados">
                 <div class="titulo-publicados">
                     <p>PUBLICADOS</p>
                 </div>
-                <a href="publicados.html"><div class="logo-publicados"></div></a>
+                <a href="publicados.php"><div class="logo-publicados"></div></a>
             </div>
             <div class="configuracao">
                 <div class="titulo-configuracao">
@@ -206,13 +202,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
     span.onclick = function() {
         modal.style.display = 'none';
-        quantityInput.value = ''; // Limpar o campo de entrada ao fechar o modal
+        quantityInput.value = '';
     };
 
     window.onclick = function(event) {
         if (event.target == modal) {
             modal.style.display = 'none';
-            quantityInput.value = ''; // Limpar o campo de entrada ao fechar o modal
+            quantityInput.value = '';
         }
     };
 
@@ -227,8 +223,8 @@ document.addEventListener('DOMContentLoaded', function() {
         }, function(response) {
             alert('Quantidade alterada com sucesso!');
             modal.style.display = 'none';
-            quantityInput.value = ''; // Limpar o campo de entrada após o envio
-            location.reload(); // Recarregar a página
+            quantityInput.value = '';
+            location.reload();
         }).fail(function() {
             alert('Não foi possível alterar a quantidade.');
         });
@@ -245,8 +241,8 @@ document.addEventListener('DOMContentLoaded', function() {
         }, function(response) {
             alert('Quantidade alterada com sucesso!');
             modal.style.display = 'none';
-            quantityInput.value = ''; // Limpar o campo de entrada após o envio
-            location.reload(); // Recarregar a página
+            quantityInput.value = '';
+            location.reload();
         }).fail(function() {
             alert('Não foi possível alterar a quantidade.');
         });

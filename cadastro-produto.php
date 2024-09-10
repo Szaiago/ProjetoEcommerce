@@ -30,7 +30,6 @@
     <!---->
     <script>
         $(document).ready(function(){
-            // Verificar a URL para a mensagem de status
             const urlParams = new URLSearchParams(window.location.search);
             const status = urlParams.get('status');
 
@@ -40,7 +39,6 @@
                 $("#mensagem").html("<p style='color: red;'>Erro ao cadastrar o produto. Tente novamente.</p>").fadeIn();
             }
 
-            // Esconder a mensagem após 4 segundos
             setTimeout(function() {
                 $("#mensagem").fadeOut();
             }, 4000);
@@ -92,7 +90,7 @@
                 <div class="titulo-publicados">
                     <p>PUBLICADOS</p>
                 </div>
-                <a href="publicados.html"><div class="logo-publicados"></div></a>
+                <a href="publicados.php"><div class="logo-publicados"></div></a>
             </div>
             <div class="configuracao">
                 <div class="titulo-configuracao">
